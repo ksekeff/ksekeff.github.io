@@ -299,18 +299,21 @@ body {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #c9d1d9;
+  color: #fff;
   text-decoration: none;
   font-size: 1rem;
-  transition: background 0.15s, color 0.15s;
+  transition: filter 0.15s;
   margin: 2px;
 }
 
 .social-links a:hover {
-  background: var(--accent);
+  filter: brightness(1.2);
   color: #fff;
 }
+
+.social-whatsapp  { background: #25D366; }
+.social-github    { background: #24292e; }
+.social-linkedin  { background: #0A66C2; }
 
 /* ── Download btn ─────────────────────────────── */
 .btn-download {
