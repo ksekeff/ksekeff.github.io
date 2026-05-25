@@ -1,0 +1,344 @@
+:root {
+  --accent: #0d6efd;
+  --sidebar-bg: #1a1d23;
+  --sidebar-text: #c9d1d9;
+}
+
+body {
+  background: #f1f3f6;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ── Sidebar ─────────────────────────────────── */
+.sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .photo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar .photo-wrapper img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(13, 110, 253, 0.2);
+}
+
+.sidebar h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar .role-badge {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar .role-badge span {
+  font-size: 0.7rem;
+  background: rgba(13, 110, 253, 0.25);
+  color: #90b8ff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  border: 1px solid rgba(13, 110, 253, 0.4);
+}
+
+.sidebar-section {
+  margin-bottom: 1.75rem;
+}
+
+.sidebar-section h6 {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6c757d;
+  border-bottom: 1px solid #2d3139;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.sidebar .info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--sidebar-text);
+  margin-bottom: 0.55rem;
+}
+
+.sidebar .info-item i {
+  color: var(--accent);
+  font-size: 0.9rem;
+  min-width: 16px;
+}
+
+.sidebar .info-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar .info-item a:hover {
+  color: #fff;
+}
+
+/* ── Skill categories ────────────────────────── */
+.skill-group {
+  margin-bottom: 1rem;
+}
+
+.skill-group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+}
+
+.skill-group-label i {
+  font-size: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.skill-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.tag-cloud { background: rgba(13,110,253,0.15); color: #90b8ff; border-color: rgba(13,110,253,0.3); }
+.tag-auto  { background: rgba(255,165,0,0.12);  color: #ffc87a; border-color: rgba(255,165,0,0.25); }
+.tag-obs   { background: rgba(25,135,84,0.15);  color: #75d49b; border-color: rgba(25,135,84,0.3); }
+.tag-dev   { background: rgba(111,66,193,0.15); color: #c8a8ff; border-color: rgba(111,66,193,0.3); }
+.tag-itsm  { background: rgba(220,53,69,0.12);  color: #ff9a9a; border-color: rgba(220,53,69,0.25); }
+
+/* ── Main Content ────────────────────────────── */
+.main-content {
+  padding: 2rem 2rem 3rem;
+}
+
+.section-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dee2e6;
+}
+
+/* ── Timeline ────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-item.new-item::before {
+  background: #198754;
+  box-shadow: 0 0 0 2px #198754, 0 0 8px rgba(25, 135, 84, 0.5);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 2px #198754, 0 0 8px rgba(25, 135, 84, 0.5); }
+  50%       { box-shadow: 0 0 0 2px #198754, 0 0 16px rgba(25, 135, 84, 0.8); }
+}
+
+.timeline-item .ti-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.timeline-item h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+}
+
+.timeline-item .ti-period {
+  font-size: 0.72rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.timeline-item .ti-org {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item p {
+  font-size: 0.82rem;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── Skills grid ──────────────────────────────── */
+.skill-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* ── Card sections ──────────────────────────── */
+.cv-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e9ecef;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ── New badge ───────────────────────────────── */
+.badge-new {
+  font-size: 0.62rem;
+  background: #198754;
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 8px;
+  vertical-align: middle;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* ── Social links ────────────────────────────── */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #c9d1d9;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+  margin: 2px;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Download btn ─────────────────────────────── */
+.btn-download {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: filter 0.15s;
+}
+
+.btn-download:hover {
+  filter: brightness(1.15);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+    position: relative;
+  }
+  .main-content {
+    padding: 1.25rem 1rem 2rem;
+  }
+}
